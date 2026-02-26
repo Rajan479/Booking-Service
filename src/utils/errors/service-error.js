@@ -5,9 +5,10 @@ const ServiceError = function (
   explanation = 'Service layer error',
   statusCode = StatusCodes.INTERNAL_SERVER_ERROR
 ) {
-  const error = new Error(message);
+  const error = new Error();
 
   error.name = 'ServiceError';
+  error.message = message;
   error.explanation = explanation;
   error.statusCode = statusCode;
 
